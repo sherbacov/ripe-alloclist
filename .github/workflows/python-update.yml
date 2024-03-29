@@ -39,4 +39,6 @@ jobs:
       run: |
         git tag "$TAG_NAME"
     - name: push code to master
-      run: git push origin $TAG_NAME
+      run: |
+        git push origin $TAG_NAME
+        git push origin
