@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   download:
@@ -24,7 +24,11 @@ jobs:
     - name: Download file from ftp ripe 
       run: python .tools/download.py
     - name: stage changed files
-      run: git add .
+      run: | 
+        git config --local user.email "41898282+github-actions@users.noreply.github.com"
+        git config --local user.name "github-actions"
+        git add .
+        
     - name: commit changed files
       run: git commit -m "Auto updating alloclist.txt"  
     - name: push code to master
