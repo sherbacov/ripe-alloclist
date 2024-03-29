@@ -35,7 +35,6 @@ jobs:
       run: git commit -m "Auto updating alloclist.txt"  
     - name: Tag version
       run: |
-        echo "tag=$TAG_NAME"
-        "git tag $TAG_NAME"
+        git tag "$TAG_NAME"
     - name: push code to master
       run: git push origin
