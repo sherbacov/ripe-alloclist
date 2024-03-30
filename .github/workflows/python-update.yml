@@ -32,7 +32,7 @@ jobs:
       run: | 
         git add .
     - name: commit changed files
-      run: git commit -m "Auto updating alloclist.txt"  
+      run: git commit --allow-empty -m "Auto updating alloclist.txt"  
     - name: Tag version
       run: |
         git tag "$TAG_NAME"
